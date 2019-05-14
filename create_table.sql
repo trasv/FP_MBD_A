@@ -36,13 +36,11 @@ CREATE TABLE pelanggan (
 CREATE TABLE pembayaran (
     pembayaran_id char(5),
     pembelian_id char(5) NOT NULL,
-    pelanggan_id char(5) NOT NULL,
     cara_pembayaran varchar(100) NOT NULL,
     administrasi numeric(8,2),
     total numeric(8,2),
     CONSTRAINT pembayaran_id PRIMARY KEY (pembayaran_id),
-    FOREIGN KEY(pembelian_id) REFERENCES pembelian(pembelian_id),
-    FOREIGN KEY(pelanggan_id) REFERENCES pelanggan(pelanggan_id)
+    FOREIGN KEY(pembelian_id) REFERENCES pembelian(pembelian_id)
 );
 
 -- Table: pembelian
