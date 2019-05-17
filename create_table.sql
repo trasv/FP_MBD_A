@@ -19,6 +19,7 @@ CREATE TABLE mobil (
     harga_pemilik numeric(8,2) NOT NULL,
     tgl_titip date NOT NULL,
     lama_hari_titip int NOT NULL,
+    availability int,
     CONSTRAINT mobil_id PRIMARY KEY (mobil_id),
     FOREIGN KEY(pemilik_lama_id) REFERENCES pemilik_lama(pemilik_lama_id)
 );
