@@ -11,7 +11,7 @@ CREATE TABLE pemilik_lama (
 
 -- Table: mobil
 CREATE TABLE mobil (
-    mobil_id char(5),
+    mobil_id char(8),
     pemilik_lama_id char(5) NOT NULL,
     merek varchar(100) NOT NULL,
     tipe varchar(100) NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE pelanggan (
 CREATE TABLE pembelian (
     pembelian_id char(5),
     pelanggan_id char(5) NOT NULL,
-    mobil_id char(5) NOT NULL,
+    mobil_id char(8) NOT NULL,
     pegawai_id char(5) NOT NULL,
     tgl_terjual date NOT NULL,
     harga_jual numeric(8,2),
