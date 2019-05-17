@@ -2,7 +2,7 @@
 CREATE TABLE pemilik_lama (
     pemilik_lama_id char(5),
     nama varchar(100) NOT NULL,
-    biaya_titip numeric(8,2) NOT NULL,
+    biaya_titip numeric(8,2),
     alamat varchar(100) NOT NULL,
     no_telp varchar(15) NOT NULL,
     jk char(1) NOT NULL,
