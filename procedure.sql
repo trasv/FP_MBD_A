@@ -14,4 +14,4 @@ BEGIN
     hasil := temp1-temp2;
     
     DBMS_OUTPUT.PUT_LINE(hasil);
-END
+END;
