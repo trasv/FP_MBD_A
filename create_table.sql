@@ -50,7 +50,7 @@ CREATE TABLE pembelian (
     pelanggan_id char(5) NOT NULL,
     mobil_id char(8) NOT NULL,
     pegawai_id char(5) NOT NULL,
-    tgl_terjual date NOT NULL,
+    tgl_terjual date,
     harga_jual numeric(15,2),
     keuntungan numeric(15,2),
     CONSTRAINT pembelian_pk PRIMARY KEY (pembelian_id),
