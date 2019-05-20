@@ -1,5 +1,6 @@
+insert into pembelian (pelanggan_id, mobil_id, pegawai_id, tgl_terjual) values (31, 'Tim00001', 40, TO_DATE('16/05/2019', 'DD/MM/YYYY'));
 insert into pembelian (pelanggan_id, mobil_id, pegawai_id, tgl_terjual) values (31, 'Pan00002', 40, TO_DATE('16/05/2019', 'DD/MM/YYYY'));
-insert into pembelian (pelanggan_id, mobil_id, pegawai_id, tgl_terjual) values (11, 'Home00003', 18, TO_DATE('13/05/2019', 'DD/MM/YYYY'));
+insert into pembelian (pelanggan_id, mobil_id, pegawai_id, tgl_terjual) values (11, 'Hom00003', 18, TO_DATE('13/05/2019', 'DD/MM/YYYY'));
 insert into pembelian (pelanggan_id, mobil_id, pegawai_id, tgl_terjual) values (16, 'Dal00004', 20, TO_DATE('14/05/2019', 'DD/MM/YYYY'));
 insert into pembelian (pelanggan_id, mobil_id, pegawai_id, tgl_terjual) values (8, 'Big00005', 19, TO_DATE('12/05/2019', 'DD/MM/YYYY'));
 insert into pembelian (pelanggan_id, mobil_id, pegawai_id, tgl_terjual) values (8, 'Bam00006', 11, TO_DATE('11/05/2019', 'DD/MM/YYYY'));
