@@ -1,12 +1,38 @@
---autofill biaya_titip dari lama titip
+--autofill biaya titip --
 create or replace TRIGGER fillbiayatitip
 BEFORE INSERT ON mobil
 FOR EACH ROW
 DECLARE temp NUMBER(11,2);
 BEGIN
 temp := :new.lama_hari_titip*100000;
+UPDATE PEMILIK_LAMA SET BIAYA_TITIP=TEMP WHERE PEMILIK_LAMA_ID = :NEW.PEMILIK_LAMA_ID;
+END;
 
-UPDATE PEMILIK_LAMA SET BIAYA_TITIP:=TEMP WHERE PEMILIK_LAMA_ID = :NEW.PEMILIK_LAMA_ID;
+-- autofill hargajual + avail + diskon>1 --
+create or replace TRIGGER fillpembelian
+BEFORE INSERT ON pembelian
+FOR EACH ROW
+DECLARE 
+temp1 int;
+temp2 int;
+temp3 int;
+cek int;
+BEGIN
+  select harga_pemilik into temp1 from mobil
+  where mobil_id=:new.mobil_id;
+  temp2 := temp1*1.3;
+  
+  select biaya_titip into temp3 from PEMILIK_LAMA;
+
+  select cek_beli(:new.pelanggan_id) into cek
+  FROM DUAL;
+
+  if cek = 1 then
+  temp2 := temp2 *0.95;
+  end if;
+  :new.harga_jual:= temp2;
+  :new.keuntungan := :new.harga_jual-temp1+temp3;
+  UPDATE MOBIL SET MOBIL.availability=1 WHERE MOBIL.MOBIL_ID= :new.mobil_id;
 END;
 
 -- autofill administrasi + total--
@@ -35,16 +61,4 @@ BEGIN
   temp:=temp+adm;
   :new.total := temp;
   
-END;
-
--- autofill hargajual --
-create or replace TRIGGER fillhargajual
-BEFORE INSERT ON pembelian
-FOR EACH ROW
-DECLARE temp int;
-BEGIN
-  select harga_pemilik into temp from mobil
-  where mobil_id=:new.mobil_id;
-  temp := temp*1.3;
-  :new.harga_jual := temp ;
 END;
