@@ -1,4 +1,4 @@
---jumlah hari sampai terjual
+--jumlah hari sampai terjual --
 CREATE OR REPLACE PROCEDURE terjual_hari( idm in varchar )
 IS
     temp1 date;
@@ -15,3 +15,21 @@ BEGIN
     
     DBMS_OUTPUT.PUT_LINE(hasil);
 END;
+
+-- procedure sisa hari menitip-- 
+create or replace PROCEDURE cek_hari(id_mobil in char)
+IS
+LAMA int;
+selisih int;
+tanggal date;
+BEGIN
+SELECT TGL_TITIP,LAMA_HARI_TITIP INTO tanggal,LAMA
+FROM MOBIL
+WHERE MOBIL_ID=id_mobil;
+
+selisih := SYSDATE - tanggal;
+lama := lama-selisih;
+DBMS_OUTPUT.PUT_LINE('sisa hari titip:'||lama);
+
+END
+;
