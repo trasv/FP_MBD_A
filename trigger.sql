@@ -22,7 +22,9 @@ BEGIN
   where mobil_id=:new.mobil_id;
   temp2 := temp1*1.3;
   
-  select biaya_titip into temp3 from PEMILIK_LAMA;
+  select lama_hari_titip into temp3 from mobil
+  where mobil_id=:new.mobil_id;
+  temp3 := temp3*100000;
 
   select cek_beli(:new.pelanggan_id) into cek
   FROM DUAL;
