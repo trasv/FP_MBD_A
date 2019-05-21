@@ -29,8 +29,10 @@ BEGIN
   select cek_beli(:new.pelanggan_id) into cek
   FROM DUAL;
 
+  dbms_output.put_line(cek);
+
   if cek = 1 then
-  temp2 := temp2 *0.95;
+  temp2 := temp2*0.95;
   end if;
   :new.harga_jual:= temp2;
   :new.keuntungan := :new.harga_jual-temp1+temp3;
