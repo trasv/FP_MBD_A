@@ -48,3 +48,9 @@ insert into pemilik_lama (nama, alamat, no_telp, jk) values ('Mitchel Richemond'
 insert into pemilik_lama (nama, alamat, no_telp, jk) values ('Lani Cuel', '95821 Hoepker Park', '8369207321', 'F');
 insert into pemilik_lama (nama, alamat, no_telp, jk) values ('Wilmar Sproule', '0 Sundown Avenue', '3958034054', 'M');
 insert into pemilik_lama (nama, alamat, no_telp, jk) values ('Laina Sayward', '3 Northridge Terrace', '4932862161', 'F');
+insert into pemilik_lama (nama, alamat, no_telp, jk) values ('Phillip Mylechreest', '61299 Shoshone Hill', '7193871753', 'M');
+insert into pemilik_lama (nama, alamat, no_telp, jk) values ('Gertrud Tipton', '1 Service Trail', '3911845705', 'F');
+insert into pemilik_lama (nama, alamat, no_telp, jk) values ('Harrietta Gable', '37247 Steensland Avenue', '9283268950', 'F');
+insert into pemilik_lama (nama, alamat, no_telp, jk) values ('Ezra Wivell', '37 Lillian Plaza', '1233816982', 'M');
+insert into pemilik_lama (nama, alamat, no_telp, jk) values ('Ezra Wivell', '37 Lillian Plaza', '1233816982', 'M');
+
